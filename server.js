@@ -1,10 +1,12 @@
 import express from 'express';
+import { getTodayDate } from './dateModul.js';
 const app = express();
 const port = 3000;
 
 // Define route
 app.get('/', (req, res) => {
-  res.send('Hello my friend!');
+  const todayDate = getTodayDate();
+  res.send(`Hello my friend! ${todayDate}`);
 });
 
 // Start server
