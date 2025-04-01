@@ -1,6 +1,6 @@
 import express from 'express';
 import { getTodayDate } from './dateModul.js';
-import contact from './contact.json' assert { type: 'json' };
+import contact from './contact.json' with { type: 'json' };
 
 const app = express();
 const port = 3000;
@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/contact', (req, res) => {
-  res.send(`Contact:${contact.name} ${contact.email} ${contact.phone}`);
+  res.send(`Contact:${contact.name} ${contact.address} ${contact.phone}`);
 });
 
 // Start server
