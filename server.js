@@ -15,7 +15,8 @@ app.get('/contact', (req, res) => {
   res.send(`Contact:${contact.name} ${contact.address} ${contact.phone}`);
 });
 
-app.get('/json-data', (req, res) => {
+
+app.get('/api/info', (req, res) => {
   res.send(
     {
       name: 'John Doe',
@@ -25,6 +26,17 @@ app.get('/json-data', (req, res) => {
 
   )
 });
+
+
+app.get('/get/users', (req, res) => {
+  res.json([
+    { name: 'John Doe' },
+    { name: 'Jane Doe' },
+    { name: 'Jim Doe' },
+    { name: 'Jack Doe' },
+    { name: 'Jill Doe' },
+  ]);
+})
 
 // Start server
 app.listen(port, () => {
