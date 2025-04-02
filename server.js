@@ -15,6 +15,17 @@ app.get('/contact', (req, res) => {
   res.send(`Contact:${contact.name} ${contact.address} ${contact.phone}`);
 });
 
+app.get('/json-data', (req, res) => {
+  res.send(
+    {
+      name: 'John Doe',
+      age: 30,
+      city: 'New York',
+    }
+
+  )
+});
+
 // Start server
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
